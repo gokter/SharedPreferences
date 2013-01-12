@@ -1,5 +1,7 @@
 package com.flyingh.sharedpreferences.service.impl;
 
+import java.util.Map;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -22,6 +24,13 @@ public class PreferenceServiceImpl implements PreferenceService {
 		editor.putString("name", name);
 		editor.putInt("age", age);
 		editor.commit();
+	}
+
+	@Override
+	public Map<String, ?> read() throws Exception {
+		SharedPreferences sharedPreferences = context.getSharedPreferences(
+				"flyingh", Context.MODE_PRIVATE);
+		return sharedPreferences.getAll();
 	}
 
 }

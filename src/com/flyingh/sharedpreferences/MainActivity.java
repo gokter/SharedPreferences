@@ -1,5 +1,7 @@
 package com.flyingh.sharedpreferences;
 
+import java.util.Map;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,6 +26,16 @@ public class MainActivity extends Activity {
 		nameText = (EditText) findViewById(R.id.name);
 		ageText = (EditText) findViewById(R.id.age);
 		preferenceService = new PreferenceServiceImpl(getApplicationContext());
+		try {
+			@SuppressWarnings("unchecked")
+			Map<String, Object> map = (Map<String, Object>) preferenceService.read();
+			if (map != null && map.size() > 0) {
+				nameText.setText(String.valueOf(map.get("name")));
+				ageText.setText(String.valueOf(map.get("age")));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void save(View view) {
