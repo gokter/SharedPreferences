@@ -7,5 +7,7 @@
     <string name="name">Enter a name</string>
     <string name="age">Enter an age</string>
     <string name="save">Save</string>
+    <string name="save_success">save success</string>
+    <string name="save_failure">save failure</string>
 
 </resources>

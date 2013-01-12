@@ -33,6 +33,8 @@ public final class R {
         public static final int menu_settings=0x7f040002;
         public static final int name=0x7f040003;
         public static final int save=0x7f040005;
+        public static final int save_failure=0x7f040007;
+        public static final int save_success=0x7f040006;
     }
     public static final class style {
         /** 
