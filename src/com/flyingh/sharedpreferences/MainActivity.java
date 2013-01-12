@@ -34,7 +34,7 @@ public class MainActivity extends Activity {
 				ageText.setText(String.valueOf(map.get("age")));
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			Log.e(TAG, e.getMessage());
 		}
 	}
 
